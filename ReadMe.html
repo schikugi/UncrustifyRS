@@ -1,0 +1,169 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta name="GENERATOR" content="IBM WebSphere Studio Homepage Builder Version 12.0.5.0 for Windows">
+	<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<title>UncrustifyRS</title>
+</head>
+<body>
+	<hr>
+	<tt>
+		【ソフト名】UncrustifyRS<br>
+		【著作権者】筑木　真志<br>
+		【制 作 日】2010/12/26<br>
+		【種　　別】開発支援<br>
+		【連 絡 先】
+		<a href="mailto:Shinji.Chikugi@nifty.com">Shinji.Chikugi@nifty.com</A>
+		<br>
+		【配 布 元】
+		<a href="http://a7m.sakura.ne.jp/">http://a7m.sakura.ne.jp/</A>
+		<br>
+		【転　　載】転載前要連絡<br>
+		【登 録 名】UncrustifyRS_1.00.7z<br>
+		【圧縮形式】7Zip<br>
+		【動作環境】Windows XP/Vista/7/Server 2003/Server 2008上で動作するEmbarcadero RAD Studio/C++Builder
+		XE<br>
+		【開発環境】RAD Studio XE
+	</tt>
+	<hr>
+	<h2>≪著作権および免責事項≫</H2>
+	<p>
+		本ソフトはフリーソフトです。自由にご使用ください。なお，著作権は作者である筑木真志が保有しています。<br>
+		このソフトウェアを使用したことによって生じたすべての障害・損害・不具合等に関しては、私と私の関係者および私の所属するいかなる団体・組織とも、一切の責任を負いません。各自の責任においてご使用ください。
+	</p>
+	<h2>はじめに</H2>
+	このアプリケーションはEmbarcadero RAD StudioのIDEを拡張して、Uncrustifyのような外部コードフォーマッターを適用するツールです。
+	<h2>ファイル構成</H2>
+	<p>アーカイブは以下の内容で構成されています。</P>
+	UncrustifyRS.bpl ： アドオンパッケージ本体<br>
+	ReadMe.html ： このファイル<br>
+	Source\ ： Delphi/RAD Studio XE用ソースコード一式<br>
+	uncrustify-0.57-win32\ ： Uncrustifyのバイナリ一式
+	<h2>インストール方法</H2>
+	<p>
+		RAD Studio XEの[コンポーネント|パッケージのインストール]を選択し、[追加]をクリックします。<br>
+		ファイル選択ダイアログが表示されますので、UncrustifyRS.bplを選択してください。<br>
+		必要であれば、Uncrustifyのバイナリ一式を任意のフォルダに展開してください。
+	</p>
+	<h2>アンインストール方法</H2>
+	<p>
+		RAD Studioの[コンポーネント|パッケージのインストール]を選択します。<br>
+		「設計時パッケージ」一覧から「Source Code Beautifier for RAD Studio/C++Builder」を選択し、[削除]をクリックします。<br>
+		プログラムオプションはHKEY_CURRENT_USER\Software\dragonhouse-software.jp\UncrustifyRSに保存されますので、削除してください。
+	</p>
+	<h2>使い方</H2>
+	<p>UncrustifyRSをインストールすると、RAD Stuioのメインメニューとエディタメニューに項目が追加されます。</p>
+	<h3>メインメニュー：[ツール|外部整形ツール オプション]</H3>
+	<p>コードフォーマッターの設定を行います。以下の項目を設定します。</P>
+	<dl>
+		<dt>
+		コードフォーマッターのパス
+		<dd>
+		コードフォーマッターのアプリケーションのパスを設定します。<br>
+		インストール時に展開したUncrustify.exeの保存先を指定します。<br>
+		デフォルトは、BDS.EXEと同じフォルダにある、&quot;Uncrustify.exe&quot;です。
+		<dt>
+		コードフォーマッターの設定パス
+		<dd>
+		コードフォーマッターの設定ファイルのパスを指定します。Uncrustifyの場合、設定ファイルは手動でも作成出来ますが、
+		<a href="http://universalindent.sourceforge.net/">UniversalIndentGUI</A>
+		のようなGUIフロントエンドを使用して設定ファイルを生成することも出来ます。<br>
+		デフォルトは、BDS.EXEと同じフォルダにある、&quot;Uncrustify.cfg&quot;です。
+		<dt>
+		コマンドライン
+		<dd>
+		アドオンパッケージがコードフォーマッターを呼び出すときのコマンドラインです。実行時に、$(EXEPATH) がコードフォーマッターのパスに、$(CONFIGPATH)がコードフォーマッターの設定パスに展開されます。また、コードフォーマッターはフィルタとして動作させる必要があります。
+		<dt>
+		エンコーディングはUTF-8を使用する
+		<dd>
+		チェックするとコードフォーマッターとファイルのやりとりをするときにエンコーディングをUTF-8にして渡します。
+	</dl>
+	<h3>エディタメニュー：[外部整形ツールでソースの整形]</H3>
+	<p>コードエディタで編集中のファイルをソースコード整形ツールで整形します。ファイルを上書きすることはありませんので、適用後でもControl+ZなどでUndoが可能です。</P>
+	<h2>配布ライセンス</H2>
+	<p>
+		UncrustifyRSそのものの配布ライセンスはMPL 1.1です。<br>
+		UncrustifyRS is released in accordance with the MPL 1.1 license. To get your own copy or read it, go to
+		<a href="http://www.mozilla.org/MPL/MPL-1.1.html">http://www.mozilla.org/MPL/MPL-1.1.html</A>
+		.<br>
+		<br>
+		Uncrustifyのオリジナルバイナリは
+		<a href="http://uncrustify.sourceforge.net/">http://uncrustify.sourceforge.net/</A>
+		より入手できます。配布条件はオリジナルに従ってください。<br>
+		<br>
+		uCommandLineUnit.pasは単なるオープンソースなので自由に使ってくださいとのことです。<br>
+		オリジナル：
+		<a href="http://delfusa.main.jp/delfusafloor/opensource/delfusa_library_f.htm">http://delfusa.main.jp/delfusafloor/opensource/delfusa_library_f.htm</A>
+		l<br>
+		改良版：
+		<a href="http://mrxray.on.coocan.jp/Delphi/plSamples/552_PipeRedirect.htm">http://mrxray.on.coocan.jp/Delphi/plSamples/552_PipeRedirect.htm</A>
+		<br>
+		元著作者のDelfusaさま（
+		<a href="http://mrxray.on.coocan.jp/Delphi/plSamples/552_PipeRedirect.htm">http://delfusa.main.jp/delfusafloor/index.shtml</A>
+		）、改良者のMr.XRAYさま（
+		<a href="http://mrxray.on.coocan.jp/">http://mrxray.on.coocan.jp/</A>
+		）に感謝!!<br>
+		<br>
+		ソースコードの一部にGExperts（
+		<a href="http://www.gexperts.org/">http://www.gexperts.org/</A>
+		）のソースを使用しています。その部分の配布条件は
+		<a href="http://www.gexperts.org/license.html">GExpertsのLicense Agreement</A>
+		に従ってください。
+	</p>
+	<h2>FAQ</H2>
+	<dl>
+		<dt>
+		Q1. RAD Studio XEってコードフォーマッターがあるよね？
+		<dd>
+		C++のコーディングスタイルは千差万別で、好みが大きく分かれます。<br>
+		RAD StudioのC++用コードフォーマッターの機能では、細かいところまで制御出来ないので作りました。
+		<dt>
+		Q3. サロゲートペア文字のようなUnicode環境特有の文字が消えるのだけど？
+		<dd>
+		この場合は[ツール|コードフォーマッター オプション]で「エンコーディングはUTF-8を使用する」をチェックしてみてください。編集中のファイルのエンコーディングをUTF-8にしてからコードフォーマッターへ渡します。ただし、UTF-8を扱えるかどうかはコードフォーマッターに依存しますので、これでも正しく動作するかどうかは保証できません。
+		<dt>
+		Q3. システムデフォルトとUTF-8以外のエンコーディングは使えないの?
+		<dd>
+		はい。現時点で8ビット長限定です。<br>
+		てか、UTF-16とかUTF-32でソースコードは書かないでしょ？(多分)
+		<dt>
+		Q4. ビルド方法は？
+		<dd>
+		アーカイブ中のSource\UncrustifyRS.dprojがRAD Studio/Delphi XE用のプロジェクトファイルです。
+		<dt>
+		Q5. RAD Studio 2010以前のバージョンは無いの？
+		<dd>
+		自分が必要になれば…。(^^;<br>
+		バージョン依存しているところはないはずなので、ビルドし直せば多分OK。ただ、2007以前の動作は保証しません。
+		<dt>
+		Q6. C++Builder用のツールなのに、なぜ、C++Builderではビルド出来ないの?
+		<dd>
+		Open Tools APIを使う上では、ぶっちゃけ、C++BuilderよりDelphiのほうが圧倒的に楽。<br>
+		あと、なぜか自分の環境ではC++Builder上でOpen Tools APIを使ったアプリのデバッグが出来なかったので。<br>
+		残念ながらそのままではビルド出来ないのですが、C++Builderで新規パッケージプロジェクトを作成して、Delphiのソースコードをプロジェクトに追加すればC++Builder単体でビルド出来るかも。<br>
+		個人的に、C++BuilderでJVCLなどのオープンソースコンポーネントを使うのであれば、Delphiを併用できる統合版のRAD Studioマジおすすめ。
+		<dt>
+		Q7. 何故、ライセンスはMPL 1.1なの？
+		<dd>
+		理由はコードの一部にGExperts（http://www.gexperts.org/）のソースを使っていて、そのライセンス要件が「ソースを使用した場合は、成果物を何らかのオープンソースライセンスで公開すること」（意訳）となっているからです。<br>
+		GPL/LGPLは動的／静的リンクをした場合にライセンス的に矛盾が発生する可能性があること。<br>
+		MIT/BSDライセンスはクローズドソースにコードが流用出来てしまうので、GExpertsのライセンスに反してしまう可能性があること。<br>
+		よって、改変して公開した場合は「改変部のソースコードの公開を強要する」MPLが一番バランスがよいと思ったので、MPLにしました。<br>
+		まぁ、ソースコードのライセンスは著作権者の権利が及ぶところにしか適用できないから、自作以外の部分はそんなに神経質になる必要はないんだけど。
+		<dt>
+		Q8. 今後の改良予定は？
+		<dd>
+		欲しい機能は実現できたので特に予定はないけれど、UniversalIndentGUIのようなRAD Studioと連動できるGUIフロントエンドは欲しいな…。<br>
+		あと、汎用化して任意のフィルタプログラムをコードエディタに適用させるようにするとか。
+	</dl>
+	<h4>履歴</H4>
+	<dl>
+		<dt>
+		2010/12/26 Version 1.00
+		<dd>
+		最初のリリースバージョン
+	</dl>
+	<p>以上</P>
+</body>
+</html>
